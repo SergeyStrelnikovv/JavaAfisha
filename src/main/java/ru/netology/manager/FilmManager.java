@@ -4,7 +4,7 @@ import ru.netology.domain.Film;
 import ru.netology.repository.FilmRepository;
 
 public class FilmManager {
-    
+    private FilmRepository repository;
     Film[] films = new Film[0];
     int filmsQuantity = 10;
 
