@@ -18,7 +18,7 @@ public class FilmManager {
         repository.save(film);
     }
 
-    public Film[] getAll() {
+    public Film[] findLast() {
         Film[] films = repository.findAll();
         int resultLength = Math.min(filmsQuantity, films.length);
         Film[] result = new Film[resultLength];

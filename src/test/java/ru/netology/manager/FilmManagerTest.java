@@ -79,7 +79,7 @@ class FilmManagerTest {
         Film[] returned = new Film[]{first, second, third, fourth, fifth, sixth, seventh, eight, ninth, tenth, eleven, twelve, thirteenth, fourteenth, fifteenth};
         doReturn(returned).when(filmRepository).findAll();
         Film[] expected = new Film[]{fifteenth, fourteenth, thirteenth, twelve, eleven, tenth, ninth, eight, seventh, sixth};
-        Film[] actual = manager.getAll();
+        Film[] actual = manager.findLast();
         assertArrayEquals(expected, actual);
     }
 
@@ -90,7 +90,7 @@ class FilmManagerTest {
         doNothing().when(filmRepository).save(third);
         manager.addFilm(third);
         Film[] expected = new Film[]{third, second, first};
-        Film[] actual = manager.getAll();
+        Film[] actual = manager.findLast();
         assertArrayEquals(expected, actual);
     }
 }
